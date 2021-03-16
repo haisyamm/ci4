@@ -1,0 +1,403 @@
+CRITICAL - 2021-03-15 01:39:05 --> Undefined property: App\Controllers\Home::$template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:39:28 --> Undefined property: App\Controllers\Home::$template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:40:15 --> Undefined property: App\Controllers\Home::$template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:42:44 --> Undefined property: App\Controllers\Home::$template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:43:16 --> Undefined variable $CI
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:45:08 --> Undefined variable $CI
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:45:18 --> Undefined property: App\Controllers\Home::$template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:45:28 --> Undefined variable $template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:47:00 --> Undefined variable $load
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 01:47:10 --> Undefined property: App\Controllers\Home::$template
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2021-03-15 01:58:15 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2021-03-15 01:58:15 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\ci4\app\Models\Product_model.php(19): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\ci4\app\Controllers\Product.php(13): App\Models\Product_model->getSatuan()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->index()
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-03-15 02:24:06 --> Call to undefined function App\Controllers\template()
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-03-15 02:39:45 --> Undefined variable: data
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 02:39:50 --> Undefined variable: data
+#0 C:\xampp\htdocs\ci4\app\Controllers\Home.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-03-15 02:50:35 --> syntax error, unexpected ''<a href="javascript: void(0);' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';'
+#0 C:\xampp\htdocs\ci4\system\Controller.php(92): helper(Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\BaseController.php(42): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(909): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(422): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:51:02 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:51:59 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:54:53 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:55:16 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:55:33 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:55:44 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:56:36 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:56:50 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:57:16 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:57:40 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 02:58:16 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\ci4\app\Helpers\general_helper.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Home.php(10): template('Dashboard', Array)
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 03:00:50 --> syntax error, unexpected 'public' (T_PUBLIC)
+#0 C:\xampp\htdocs\ci4\system\Autoloader\Autoloader.php(265): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\ci4\system\Autoloader\Autoloader.php(228): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(893): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(417): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2021-03-15 03:01:06 --> Error connecting to the database: Unknown database 'ci4'
+CRITICAL - 2021-03-15 03:01:06 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\ci4\app\Models\Product_model.php(19): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\ci4\app\Controllers\Product.php(13): App\Models\Product_model->getSatuan()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->index()
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-03-15 03:33:04 --> syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+#0 C:\xampp\htdocs\ci4\system\Controller.php(92): helper(Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\BaseController.php(42): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(909): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(422): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2021-03-15 05:25:18 --> mysqli_sql_exception: Column 'jual_product' cannot be null in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:314
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(314): mysqli->query('INSERT INTO `pr...')
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2263): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\ci4\app\Models\Product_model.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4\app\Controllers\Product.php(49): App\Models\Product_model->saveProduct(Array)
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->save()
+#7 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#8 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2021-03-15 05:27:30 --> mysqli_sql_exception: Column 'jual_product' cannot be null in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:314
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(314): mysqli->query('INSERT INTO `pr...')
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2263): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\ci4\app\Models\Product_model.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4\app\Controllers\Product.php(49): App\Models\Product_model->saveProduct(Array)
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->save()
+#7 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#8 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2021-03-15 05:28:17 --> mysqli_sql_exception: Column 'stok_product' cannot be null in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:314
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(314): mysqli->query('INSERT INTO `pr...')
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2263): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\ci4\app\Models\Product_model.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4\app\Controllers\Product.php(49): App\Models\Product_model->saveProduct(Array)
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->save()
+#7 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#8 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-03-15 05:33:17 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\ci4\system\Model.php(615): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\ci4\system\Model.php(791): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\ci4\app\Models\Product_model.php(24): CodeIgniter\Model->__get('request')
+#3 C:\xampp\htdocs\ci4\app\Controllers\Product.php(41): App\Models\Product_model->saveProduct()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->save()
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-03-15 05:34:00 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\ci4\system\Model.php(615): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\ci4\system\Model.php(791): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\ci4\app\Models\Product_model.php(24): CodeIgniter\Model->__get('request')
+#3 C:\xampp\htdocs\ci4\app\Controllers\Product.php(41): App\Models\Product_model->saveProduct()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->save()
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2021-03-15 05:34:32 --> mysqli_sql_exception: Column 'stok_product' cannot be null in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:314
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(314): mysqli->query('INSERT INTO `pr...')
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2263): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\ci4\app\Models\Product_model.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4\app\Controllers\Product.php(49): App\Models\Product_model->saveProduct(Array)
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->save()
+#7 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#8 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-03-15 07:28:18 --> Too few arguments to function App\Controllers\Product::editProduct(), 0 passed in C:\xampp\htdocs\ci4\system\CodeIgniter.php on line 936 and exactly 1 expected
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-03-15 22:39:47 --> Too few arguments to function App\Controllers\Product::editProduct(), 0 passed in C:\xampp\htdocs\ci4\system\CodeIgniter.php on line 936 and exactly 1 expected
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-03-15 22:39:50 --> Too few arguments to function App\Controllers\Product::editProduct(), 0 passed in C:\xampp\htdocs\ci4\system\CodeIgniter.php on line 936 and exactly 1 expected
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-03-15 22:39:59 --> Too few arguments to function App\Controllers\Product::editProduct(), 0 passed in C:\xampp\htdocs\ci4\system\CodeIgniter.php on line 936 and exactly 1 expected
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-03-15 22:40:56 --> Undefined variable: db
+#0 C:\xampp\htdocs\ci4\app\Models\Product_model.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Product.php(57): App\Models\Product_model->editProduct('2')
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 22:45:46 --> Undefined variable: builder
+#0 C:\xampp\htdocs\ci4\app\Models\Product_model.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 29, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Product.php(57): App\Models\Product_model->editProduct('5')
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-03-15 22:46:12 --> Undefined variable: builder
+#0 C:\xampp\htdocs\ci4\app\Models\Product_model.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 29, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Product.php(57): App\Models\Product_model->editProduct('5')
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2021-03-15 22:46:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from products where id_product ='3'
+FROM `products`' at line 1 in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:314
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT select *...')
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT select *...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT select *...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT select *...', Array, false)
+#4 C:\xampp\htdocs\ci4\app\Models\Product_model.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci4\app\Controllers\Product.php(57): App\Models\Product_model->editProduct('3')
+#6 C:\xampp\htdocs\ci4\system\CodeIgniter.php(936): App\Controllers\Product->editProduct()
+#7 C:\xampp\htdocs\ci4\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#8 C:\xampp\htdocs\ci4\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ci4\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}

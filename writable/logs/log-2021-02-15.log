@@ -1,0 +1,12 @@
+CRITICAL - 2021-02-15 07:24:11 --> The framework needs the following extension(s) installed and loaded: {0}.
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(224): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(172): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\ci4\system\bootstrap.php(159): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\ci4\spark(53): require('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2021-02-15 07:53:37 --> The framework needs the following extension(s) installed and loaded: {0}.
+#0 C:\xampp\htdocs\ci4\system\CodeIgniter.php(224): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\ci4\system\CodeIgniter.php(172): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\ci4\system\bootstrap.php(159): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\ci4\spark(53): require('C:\\xampp\\htdocs...')
+#4 {main}
