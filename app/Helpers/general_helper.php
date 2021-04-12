@@ -45,3 +45,10 @@ function template($view_name, $data)
     </div>';
   echo view('layout/footer', $data);
 }
+
+function template_login($view_name, $data)
+{
+  echo view('layout/header_login');
+  echo view( $view_name, $data); //Konten
+  echo view('layout/footer', $data);
+}
