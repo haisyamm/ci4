@@ -2,18 +2,21 @@
 <div class="container-fluid dashboard-content ">
   <div class="row">
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Product</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group mr-2">
-            <div class="float-right"><a href="javascript:void(0);" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#FormModal"><span class="fa fa-plus"></span> Tambah Data</a></div>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-        </div>
-      </div>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-md-4">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2 class="card-header">Product</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                      <div class="btn-group mr-2">
+                        <div class="float-right"><a href="javascript:void(0);" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#FormModal"><span class="fa fa-plus"></span> Tambah Data</a></div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                      </div>
+                    </div>
+                  </div>
+                <div class="card-body">
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-bordered first">
           <thead>
             <tr>
               <th>#</th>
@@ -22,7 +25,7 @@
               <th>Harga Jual</th>
               <th>Stok</th>
               <th>Ket</th>
-              <th colspan="2">Action</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="tblProduct">
@@ -33,10 +36,12 @@
           </tbody>
         </table>
       </div>
+      </div>
+    </div>
+    </div>
     </main>
   </div>
 </div>
-
      <!-- MODAL ADD di Ubah Menajadi FormModal pada id nya tujuannya agar form ini dapat digunakan untuk input dan update-->
             <form>
             <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -154,8 +159,8 @@
                 '<td>'+data[i].stok_product+'</td>'+
                 '<td>'+data[i].ket_product+'</td>'+
                 '<td style="text-align:center;">'+
-                  '<a href="javascript:void(0);" class="btn btn-info btn-sm item_edit" data-idproduct="'+data[i].id_product+'">Edit</a>'+' '+
-                  '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-idproduct="'+data[i].id_product+'">Delete</a>'+
+                  '<a href="javascript:void(0);" class="btn btn-info btn-sm item_edit" data-idproduct="'+data[i].id_product+'"><i class="fas fa-pencil-alt"></i></a>'+' '+
+                  '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-idproduct="'+data[i].id_product+'"><i class="fas fa-trash"></i></a>'+
                 '</td>'+
                 '</tr>';
           } // akhir dari looping
