@@ -36,6 +36,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/product', 'Product::index');
 $routes->get('/inputproduct', 'Product::input');
 $routes->get('/simpanproduct', 'Product::save');
+
+$routes->get('/returproduct', 'ReturBarang::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
