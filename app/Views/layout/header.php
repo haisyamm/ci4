@@ -14,15 +14,20 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/fonts/material-design-iconic-font/css')?>/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/charts/c3charts')?>/c3.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/fonts/flag-icon-css')?>/flag-icon.min.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/datatables/css')?>/dataTables.bootstrap4.css">
+    <title>IK 19 B - Web Development Project</title>
 
     <!-- jquery 3.3.1 Dicopy dari footer untuk menjadi plug-in utama sehingga di simpan di header-->
     <script src="<?php echo base_url('assets/vendor/jquery')?>/jquery-3.3.1.min.js"></script> 
+   
+    
+
 </head>
 <body>
      <div class="dashboard-header ">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Concept</a>
+                <a class="navbar-brand" href="/">KELOMPOK 1</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -116,12 +121,12 @@
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <h5 class="mb-0 text-white nav-user-name"><?php echo session()->get('nama_lengkap'); ?> </h5>
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="auth/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
