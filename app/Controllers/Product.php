@@ -9,14 +9,24 @@ class Product extends BaseController
 {
 	public function index()
 	{
-        $model = new Product_model();
-        $data['satuan']  = $model->getSatuan()->getResult();
+        $logged = session()->get('logged_in');
+        
+        if ($logged == TRUE) {
 
-		echo template('view_product', $data);
+            $model = new Product_model();
+            $data['satuan']  = $model->getSatuan()->getResult();
+
+            echo template('view_product', $data);
+            
+        } else {
+
+            return redirect()->to('/auth');
+        }
     }
 
     public function getProduct()
     {
+        
 
         $model = new Product_model();
         $data  = $model->getProduct()->getResult();
