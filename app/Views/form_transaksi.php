@@ -6,7 +6,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Form Input Produk</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btn_close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btn_close" onclick="javascript:HapusItem()">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
@@ -34,7 +34,7 @@
                           </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn_close">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn_close" onclick="javascript:HapusItem()">>Close</button>
                   </div>
                 </div>
               </div>
@@ -86,9 +86,11 @@
             <tbody></tbody>
         </table>
         </div>
+         <input type="hidden" class="form-control" name="baris" id="baris" value="0" disabled>
         <div class="row">
         <div class="col-sm-7">
-            <textarea name="catatan" id="catatan" class="form-control" rows="2" placeholder="Catatan Transaksi (Jika Ada)" style="resize: vertical; width:83%;"></textarea>
+            <textarea name="catatan" id="catatan" class="form-control" rows="2
+            " placeholder="Catatan Transaksi (Jika Ada)" style="resize: vertical; width:83%;"></textarea>
             
             <br />
             <p><i class="fa fa-keyboard-o fa-fw"></i> <b>Shortcut Keyboard : </b></p>
@@ -139,33 +141,8 @@
     </div>
 </div>
 
-<script type="text/javascript">
-function setValue(a,b,c){
-    ada=false;
-    for(i=1;i<=d;i++){
-        if(
-            (a==document.getElementById("iproduct"+i).value) && 
-            (i!==d) && 
-            (e==document.getElementById("motif"+i).value)
-          ){
-            alert ("kode : "+a+" sudah ada !!!!!");
-            ada=true;
-            break;
-        }else{
-            ada=false;
-        }
-    }
-    if(!ada){
-          document.getElementById("iproduct"+d).value=a;
-          document.getElementById("eproductname"+d).value=b;
-          document.getElementById("vproductretail"+d).value=c;
-          document.getElementById("motif"+d).value=e;
-          document.getElementById("emotifname"+d).value=f;
-          document.getElementById("iproductstatus"+d).value=g;
-          jsDlgHide("#konten *", "#fade", "#light");
-    }
-}
-    $(document).ready(function(){
+<script language="javascript" type="text/javascript">
+$(document).ready(function(){
 
     show_product();
 
@@ -196,6 +173,8 @@ function setValue(a,b,c){
     $('#addProduct').click(function(){
   
         $('#productModal').modal('show');
+        BarisBaru();
+        document.getElementById("baris").value =  $('#TabelTransaksi tbody tr').length;
 
     });
 
@@ -204,6 +183,7 @@ function setValue(a,b,c){
 });
 
 function show_product(){ //untuk menampilkan data product
+    
       $.ajax({
         type  : 'GET',
         url   : '<?php echo site_url('product/getProduct')?>', //Memanggil Controller/Function
@@ -215,12 +195,13 @@ function show_product(){ //untuk menampilkan data product
           var no;
           for(i=0; i<data.length; i++){ //looping atau pengulangan
             no = i + 1;
-            html += '<tr>'+
-                '<td>'+no+'</td>'+
-                '<td>'+data[i].name_product+'</td>'+
-                '<td>'+data[i].jual_product+'</td>'+
-                '<td><a href="#"class="btn btn-sm btn-success"><i class="fa fa-check"></i> Choose</a></td>'+
-                '</tr>';
+
+            html += "<tr>"+
+                "<td>"+no+"</td>"+
+                "<td>"+data[i].name_product+"</td>"+
+                "<td>"+data[i].jual_product+"</td>"+
+                "<td><a href=\"javascript:setValue('"+data[i].id_product+"','"+data[i].name_product+"','"+data[i].jual_product+"')\" class='btn btn-sm btn-success'><i class='fa fa-check'></i> Choose</a></td>"+
+                "</tr>";
           } // akhir dari looping
 
           $('#tblProduct').html(html); // mengirim data
@@ -228,26 +209,62 @@ function show_product(){ //untuk menampilkan data product
       });
     }
 
+function setValue(a,b,c){
+    d = document.getElementById("baris").value;
+    ada=false;
+    for(i=1;i<=d;i++){
+        if(
+            (a==document.getElementById("idproduct"+i).value) && 
+            (i!==d)){
+            alert ("kode : "+a+" sudah ada !!!!!");
+            ada=true;
+            break;
+        }else{
+            ada=false;
+        }
+    }
+    if(!ada){
+          document.getElementById("idproduct"+d).value=a;
+          document.getElementById("nameproduct"+d).value=b;
+          document.getElementById("harga"+d).value=c;
+          $('#productModal').modal('hide');
+          show_product();
+    }
+}
+
+function HapusItem(){
+    $('#productModal').modal('hide');
+    var d = $('#TabelTransaksi tbody tr').length;
+    $('#HapusBaris'+d).parent().parent().remove();
+    var Nomor = 1;
+    $('#TabelTransaksi tbody tr').each(function(){
+        $(this).find('td:nth-child(1)').html(Nomor);
+        Nomor++;
+    });
+    document.getElementById("baris").value =  $('#TabelTransaksi tbody tr').length;
+    HitungTotalBayar();
+    show_product();
+}
 function BarisBaru()
 {
     var Nomor = $('#TabelTransaksi tbody tr').length + 1;
     var Baris = "<tr>";
         Baris += "<td>"+Nomor+"</td>";
         Baris += "<td>";
-            Baris += "<input type='text' class='form-control' name='idproduct' id='idproduct"+Nomor+"' disabled>";
+            Baris += "<input type='text' class='form-control' name='idproduct"+Nomor+"' id='idproduct"+Nomor+"' disabled>";
         Baris += "</td>";
         Baris += "<td>";
-            Baris += "<input type='text' class='form-control' name='nameproduct' id='nameproduct"+Nomor+"' disabled>";
+            Baris += "<input type='text' class='form-control' name='nameproduct"+Nomor+"' id='nameproduct"+Nomor+"' disabled>";
         Baris += "</td>";
         Baris += "<td>";
-            Baris += "<input type='text' class='form-control' name='harga"+Nomor+"' id='harga' disabled>";
+            Baris += "<input type='text' class='form-control' name='harga"+Nomor+"' id='harga"+Nomor+"' disabled>";
         Baris += "</td>";
         Baris += "<td><input type='text' class='form-control' id='jumlah_beli' name='jumlah_beli[]' onkeypress='return check_int(event)' ></td>";
         Baris += "<td>";
             Baris += "<input type='hidden' name='sub_total[]'>";
             Baris += "<span></span>";
         Baris += "</td>";
-        Baris += "<td><button class='btn btn-default' id='HapusBaris'><i class='fa fa-times' style='color:red;'></i></button></td>";
+        Baris += "<td><button class='btn btn-default' id='HapusBaris"+Nomor+"' onclick='javascript:HapusBaris("+Nomor+")'><i class='fa fa-times' style='color:red;'></i></button></td>";
         Baris += "</tr>";
 
     $('#TabelTransaksi tbody').append(Baris);
@@ -256,172 +273,22 @@ function BarisBaru()
         $(this).find('td:nth-child(2) input').focus();
     });
 
-
+    for ( i = 1; i < Nomor; i++) {
+        document.getElementById("HapusBaris"+i).disabled = true;
+    }
     HitungTotalBayar();
 }
 
-$(document).on('click', '#HapusBaris', function(e){
-    e.preventDefault();
-    $(this).parent().parent().remove();
-
-    var Nomor = 1;
-    $('#TabelTransaksi tbody tr').each(function(){
-        $(this).find('td:nth-child(1)').html(Nomor);
-        Nomor++;
-    });
-
+function HapusBaris(a){
+    $('#HapusBaris'+a).parent().parent().remove();
+        
+    baris = $('#TabelTransaksi tbody tr').length;   
+    document.getElementById("baris").value =  baris;
+    document.getElementById("HapusBaris"+baris).disabled = false;
     HitungTotalBayar();
-});
-
-
-function AutoCompleteGue(Lebar, KataKunci, Indexnya)
-{
-    $('div#hasil_pencarian').hide();
-    var Lebar = Lebar + 25;
-
-    var Registered = '';
-    $('#TabelTransaksi tbody tr').each(function(){
-        if(Indexnya !== $(this).index())
-        {
-            if($(this).find('td:nth-child(2) input').val() !== '')
-            {
-                Registered += $(this).find('td:nth-child(2) input').val() + ',';
-            }
-        }
-    });
-
-    if(Registered !== ''){
-        Registered = Registered.replace(/,\s*$/,"");
-    }
-
-    $.ajax({
-        url: "<?php echo site_url('penjualan/ajax-kode'); ?>",
-        type: "POST",
-        cache: false,
-        data:'keyword=' + KataKunci + '&registered=' + Registered,
-        dataType:'json',
-        success: function(json){
-            if(json.status == 1)
-            {
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').find('div#hasil_pencarian').css({ 'width' : Lebar+'px' });
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').find('div#hasil_pencarian').show('fast');
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').find('div#hasil_pencarian').html(json.datanya);
-            }
-            if(json.status == 0)
-            {
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(3)').html('');
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) input').val('');
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) span').html('');
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(5) input').prop('disabled', true).val('');
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(6) input').val(0);
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(6) span').html('');
-            }
-        }
-    });
-
-    HitungTotalBayar();
+    show_product();
 }
 
-$(document).on('keyup', '#pencarian_kode', function(e){
-    if($(this).val() !== '')
-    {
-        var charCode = e.which || e.keyCode;
-        if(charCode == 40)
-        {
-            if($('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li.autocomplete_active').length > 0)
-            {
-                var Selanjutnya = $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li.autocomplete_active').next();
-                $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li.autocomplete_active').removeClass('autocomplete_active');
-
-                Selanjutnya.addClass('autocomplete_active');
-            }
-            else
-            {
-                $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li:first').addClass('autocomplete_active');
-            }
-        } 
-        else if(charCode == 38)
-        {
-            if($('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li.autocomplete_active').length > 0)
-            {
-                var Sebelumnya = $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li.autocomplete_active').prev();
-                $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li.autocomplete_active').removeClass('autocomplete_active');
-            
-                Sebelumnya.addClass('autocomplete_active');
-            }
-            else
-            {
-                $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian li:first').addClass('autocomplete_active');
-            }
-        }
-        else if(charCode == 13)
-        {
-            var Field = $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)');
-            var Kodenya = Field.find('div#hasil_pencarian li.autocomplete_active span#kodenya').html();
-            var Barangnya = Field.find('div#hasil_pencarian li.autocomplete_active span#barangnya').html();
-            var Harganya = Field.find('div#hasil_pencarian li.autocomplete_active span#harganya').html();
-            
-            Field.find('div#hasil_pencarian').hide();
-            Field.find('input').val(Kodenya);
-
-            $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(3)').html(Barangnya);
-            $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(4) input').val(Harganya);
-            $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(4) span').html(to_rupiah(Harganya));
-            $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(5) input').removeAttr('disabled').val(1);
-            $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(6) input').val(Harganya);
-            $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(6) span').html(to_rupiah(Harganya));
-            
-            var IndexIni = $(this).parent().parent().index() + 1;
-            var TotalIndex = $('#TabelTransaksi tbody tr').length;
-            if(IndexIni == TotalIndex){
-                BarisBaru();
-
-                $('html, body').animate({ scrollTop: $(document).height() }, 0);
-            }
-            else {
-                $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(5) input').focus();
-            }
-        }
-        else 
-        {
-            AutoCompleteGue($(this).width(), $(this).val(), $(this).parent().parent().index());
-        }
-    }
-    else
-    {
-        $('#TabelTransaksi tbody tr:eq('+$(this).parent().parent().index()+') td:nth-child(2)').find('div#hasil_pencarian').hide();
-    }
-
-    HitungTotalBayar();
-});
-
-$(document).on('click', '#daftar-autocomplete li', function(){
-    $(this).parent().parent().parent().find('input').val($(this).find('span#kodenya').html());
-    
-    var Indexnya = $(this).parent().parent().parent().parent().index();
-    var NamaBarang = $(this).find('span#barangnya').html();
-    var Harganya = $(this).find('span#harganya').html();
-
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2)').find('div#hasil_pencarian').hide();
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(3)').html(NamaBarang);
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) input').val(Harganya);
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) span').html(to_rupiah(Harganya));
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(5) input').removeAttr('disabled').val(1);
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(6) input').val(Harganya);
-    $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(6) span').html(to_rupiah(Harganya));
-
-    var IndexIni = Indexnya + 1;
-    var TotalIndex = $('#TabelTransaksi tbody tr').length;
-    if(IndexIni == TotalIndex){
-        BarisBaru();
-        $('html, body').animate({ scrollTop: $(document).height() }, 0);
-    }
-    else {
-        $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(5) input').focus();
-    }
-
-    HitungTotalBayar();
-});
 
 $(document).on('keyup', '#jumlah_beli', function(){
     var Indexnya = $(this).parent().parent().index();
