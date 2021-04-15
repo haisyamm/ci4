@@ -39,6 +39,45 @@
                 </div>
               </div>
             </div>
+
+            <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Form Input Produk</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+                  <div class="modal-body">
+                        <!--  Paste disini -->
+                          <div class="table-responsive">
+                            <table class="table table-striped table-bordered first">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Nama Product</th>
+                                  <th>Harga</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody id="tblCustomer">
+                               <!--  disini nanti akan muncul tabel yang dikirim dari coding ajax pada javascript
+                                sehingga tbody di berikan ID agar tidak salah saat pengiriman data 
+                              sama seperti primarykey agar tidak salah alamat
+                              -->
+                              </tbody>
+                            </table>
+                          </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         <!--END MODAL ADD-->
 
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -105,11 +144,12 @@
             <div class="form-horizontal">
                 <div class="form-group col-md-10">
                         <label for="disc">Discount</label>
-                        <input type="text" class="form-control" name="namaproduct" id="namaproduct" placeholder="Enter Discount">
+                        <input type="number" class="form-control" id="disc" name="disc">
                       </div>
                       <div class="form-group col-md-10">
                         <label for="">Grand Total</label>
-                        <input type="text" class="form-control" name="Grand Total" id="grandtotal" disabled>
+                        <input type="text" class="form-control" name="Grand Total" id="TotalBayar" disabled>
+                        <input type="hidden" id="TotalBayarHidden">
                       </div>
                       <div class="form-group  col-md-10" >
                             <label for="UangCash">Bayar</label>
@@ -145,6 +185,7 @@
 $(document).ready(function(){
 
     show_product();
+    show_customer();
 
     $('#id_pelanggan').change(function(){
         if($(this).val() !== '')
@@ -175,6 +216,12 @@ $(document).ready(function(){
         $('#productModal').modal('show');
         BarisBaru();
         document.getElementById("baris").value =  $('#TabelTransaksi tbody tr').length;
+
+    });
+
+    $('#namacustomer').click(function(){
+  
+        $('#customerModal').modal('show');
 
     });
 
@@ -209,6 +256,40 @@ function show_product(){ //untuk menampilkan data product
       });
     }
 
+
+function show_customer(){ //untuk menampilkan data product
+    
+      $.ajax({
+        type  : 'GET',
+        url   : '<?php echo site_url('customer/getCustomer')?>', //Memanggil Controller/Function
+        async : false,
+        dataType : 'json',
+        success : function(data){
+          var html = '';
+          var i;
+          var no;
+          for(i=0; i<data.length; i++){ //looping atau pengulangan
+            no = i + 1;
+
+            html += "<tr>"+
+                "<td>"+no+"</td>"+
+                "<td>"+data[i].name_customer+"</td>"+
+                "<td>"+data[i].telp_customer+"</td>"+
+                "<td><a href=\"javascript:setCustomer('"+data[i].id_customer+"','"+data[i].name_customer+"')\" class='btn btn-sm btn-success'><i class='fa fa-check'></i> Choose</a></td>"+
+                "</tr>";
+          } // akhir dari looping
+
+          $('#tblCustomer').html(html); // mengirim data
+        }      
+      });
+    }
+
+function setCustomer(a,b){
+      document.getElementById("idcustomer").value=a;
+      document.getElementById("namacustomer").value=b;
+      $('#customerModal').modal('hide');
+}
+
 function setValue(a,b,c){
     d = document.getElementById("baris").value;
     ada=false;
@@ -228,6 +309,7 @@ function setValue(a,b,c){
           document.getElementById("nameproduct"+d).value=b;
           document.getElementById("harga"+d).value=c;
           $('#productModal').modal('hide');
+          document.getElementById("jumlah_beli"+d).focus();
           show_product();
     }
 }
@@ -242,7 +324,9 @@ function HapusItem(){
         Nomor++;
     });
     document.getElementById("baris").value =  $('#TabelTransaksi tbody tr').length;
+    document.getElementById("HapusBaris"+baris).disabled = false;
     HitungTotalBayar();
+    potongan();
     show_product();
 }
 function BarisBaru()
@@ -259,19 +343,15 @@ function BarisBaru()
         Baris += "<td>";
             Baris += "<input type='text' class='form-control' name='harga"+Nomor+"' id='harga"+Nomor+"' disabled>";
         Baris += "</td>";
-        Baris += "<td><input type='text' class='form-control' id='jumlah_beli' name='jumlah_beli[]' onkeypress='return check_int(event)' ></td>";
+        Baris += "<td><input type='text' class='form-control' id='jumlah_beli"+Nomor+"' name='jumlah_beli"+Nomor+"' onkeyup='return jumlahkan("+Nomor+")'></td>";
         Baris += "<td>";
-            Baris += "<input type='hidden' name='sub_total[]'>";
+            Baris += "<input type='text' class='form-control' id='SubTotal"+Nomor+"' name='SubTotal"+Nomor+"' disabled>";
             Baris += "<span></span>";
         Baris += "</td>";
         Baris += "<td><button class='btn btn-default' id='HapusBaris"+Nomor+"' onclick='javascript:HapusBaris("+Nomor+")'><i class='fa fa-times' style='color:red;'></i></button></td>";
         Baris += "</tr>";
 
     $('#TabelTransaksi tbody').append(Baris);
-
-    $('#TabelTransaksi tbody tr').each(function(){
-        $(this).find('td:nth-child(2) input').focus();
-    });
 
     for ( i = 1; i < Nomor; i++) {
         document.getElementById("HapusBaris"+i).disabled = true;
@@ -289,96 +369,58 @@ function HapusBaris(a){
     show_product();
 }
 
-
-$(document).on('keyup', '#jumlah_beli', function(){
-    var Indexnya = $(this).parent().parent().index();
-    var Harga = $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(4) input').val();
-    var JumlahBeli = $(this).val();
-    var KodeBarang = $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(2) input').val();
-
-    $.ajax({
-        url: "<?php echo site_url('barang/cek-stok'); ?>",
-        type: "POST",
-        cache: false,
-        data: "kode_barang="+encodeURI(KodeBarang)+"&stok="+JumlahBeli,
-        dataType:'json',
-        success: function(data){
-            if(data.status == 1)
-            {
-                var SubTotal = parseInt(Harga) * parseInt(JumlahBeli);
-                if(SubTotal > 0){
-                    var SubTotalVal = SubTotal;
-                    SubTotal = to_rupiah(SubTotal);
-                } else {
-                    SubTotal = '';
-                    var SubTotalVal = 0;
-                }
-
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(6) input').val(SubTotalVal);
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(6) span').html(SubTotal);
-                HitungTotalBayar();
-            }
-            if(data.status == 0)
-            {
-                $('.modal-dialog').removeClass('modal-lg');
-                $('.modal-dialog').addClass('modal-sm');
-                $('#ModalHeader').html('Oops !');
-                $('#ModalContent').html(data.pesan);
-                $('#ModalFooter').html("<button type='button' class='btn btn-primary' data-dismiss='modal' autofocus>Ok, Saya Mengerti</button>");
-                $('#ModalGue').modal('show');
-
-                $('#TabelTransaksi tbody tr:eq('+Indexnya+') td:nth-child(5) input').val('1');
-            }
-        }
-    });
-});
-
-$(document).on('keydown', '#jumlah_beli', function(e){
-    var charCode = e.which || e.keyCode;
-    if(charCode == 9){
-        var Indexnya = $(this).parent().parent().index() + 1;
-        var TotalIndex = $('#TabelTransaksi tbody tr').length;
-        if(Indexnya == TotalIndex){
-            BarisBaru();
-            return false;
-        }
+function jumlahkan(a){
+    p = document.getElementById("harga"+a).value;
+    q = document.getElementById("jumlah_beli"+a).value;
+    //alert(p,q);
+    SubTotal = p * q;
+    document.getElementById("SubTotal"+a).value = SubTotal;
+    HitungTotalBayar();
     }
 
-    HitungTotalBayar();
-});
-
-$(document).on('keyup', '#UangCash', function(){
-    HitungTotalKembalian();
-});
+    $(document).on('keyup', '#UangCash', function(){
+     HitungTotalKembalian();
+     potongan();
+    });
 
 function HitungTotalBayar()
 {
+    baris = $('#TabelTransaksi tbody tr').length; 
     var Total = 0;
-    $('#TabelTransaksi tbody tr').each(function(){
-        if($(this).find('td:nth-child(6) input').val() > 0)
-        {
-            var SubTotal = $(this).find('td:nth-child(6) input').val();
-            Total = parseInt(Total) + parseInt(SubTotal);
-        }
-    });
+    for (i = 1; i <= baris; i++) {
+        var SubTotal = document.getElementById("SubTotal"+i).value;
+        Total = parseInt(Total) + parseInt(SubTotal);
+    }
 
-    $('#TotalBayar').html(to_rupiah(Total));
-    $('#TotalBayarHidden').val(Total);
+    document.getElementById("TotalBayar").value = Total;
+    document.getElementById("TotalBayarHidden").value=Total;
 
     $('#UangCash').val('');
     $('#UangKembali').val('');
 }
 
+function potongan() {
+
+    Total = document.getElementById("TotalBayar").value;
+    d = document.getElementById("disc").value;
+    potongan =  parseInt(Total) * parseInt(d) / 100;
+    TotalBayar = Total - potongan;
+
+    document.getElementById("TotalBayar").value = TotalBayar;
+    document.getElementById("TotalBayarHidden").value=TotalBayar;
+}
+
+
 function HitungTotalKembalian()
 {
-    var Cash = $('#UangCash').val();
-    var TotalBayar = $('#TotalBayarHidden').val();
+    var Cash = document.getElementById("UangCash").value;
+    var TotalBayar = document.getElementById("TotalBayarHidden").value;
 
     if(parseInt(Cash) >= parseInt(TotalBayar)){
         var Selisih = parseInt(Cash) - parseInt(TotalBayar);
-        $('#UangKembali').val(to_rupiah(Selisih));
+        document.getElementById("UangKembali").value= to_rupiah(Selisih);
     } else {
-        $('#UangKembali').val('');
+        document.getElementById("UangKembali").value='';
     }
 }
 
@@ -399,6 +441,24 @@ function check_int(evt) {
     return ( charCode >= 48 && charCode <= 57 || charCode == 8 );
 }
 
+$('#disc').change(function(e) {
+        e.preventDefault();
+        if ($(this).val() == "") $(this).val(0).select();
+
+        HitungTotalBayar();
+        Total = document.getElementById("TotalBayar").value;
+        d = document.getElementById("disc").value;
+        potongan =  parseInt(Total) * parseInt(d) / 100;
+        TotalBayar = Total - potongan;
+
+        document.getElementById("TotalBayar").value = TotalBayar;
+        document.getElementById("TotalBayarHidden").value=TotalBayar;
+            
+      });
+
+
+
+
 $(document).on('keydown', 'body', function(e){
     var charCode = ( e.which ) ? e.which : event.keyCode;
 
@@ -410,7 +470,7 @@ $(document).on('keydown', 'body', function(e){
 
     if(charCode == 119) //F8
     {
-        $('#UangCash').focus();
+        document.getElementById("UangCash").focus();
         return false;
     }
 
