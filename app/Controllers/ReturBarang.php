@@ -20,4 +20,21 @@ class ReturBarang extends BaseController
 		}
 		
 	}
+
+	public function save()
+    {
+      
+        // if(!empty($cek)){
+
+     
+
+            echo '200';
+
+        // } else {
+            
+        //     echo '300';
+
+        // }
+
+    }
 }
