@@ -88,6 +88,7 @@
         <div class="card-body">
         <div class="row"> <!-- Header Form -->
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <form id="formTransaksi">
         <div class="form-group col-md-10">
             <label for="">Kode Customer / Gudang</label>
             <input type="text" class="form-control" name="idcustomer" id="idcustomer" disabled>
@@ -105,7 +106,7 @@
               </div>
               <div class="form-group  col-md-10">
                 <br>
-                <button id="addProduct" class="btn btn-default pull-left"><i class="fa fa-plus fa-fw"></i> Add Product (F7)</button>
+                <button type="button" id="addProduct" class="btn btn-default pull-left"><i class="fa fa-plus fa-fw"></i> Add Product (F7)</button>
               </div>
         </div>
         
@@ -167,19 +168,86 @@
                         </button>
                     </div>
                     <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary btn-block" id="Simpann">
+                        <button type="button" class="btn btn-primary btn-block" id="btnSimpan">
                             <i class="fa fa-floppy-o"></i> Simpan (F10)
                         </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </form>
       </div>
       </div>
     </div>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $('#btnSimpan').click(function(){
+        $('#formTransaksi').find(':input:disabled').removeAttr('disabled');
+        $('#TabelTransaksi').find(':input:disabled').removeAttr('disabled');
+        var dataForm = $('#formTransaksi').serialize();
+        var dataTabel = $('#TabelTransaksi tbody input').serialize();
+        var dataTransaksi = dataForm + '&' + dataTabel;
+        $.ajax({
+        type  : 'POST',
+        url   : '<?php echo site_url('ReturBarang/save')?>',//Memanggil Controller/Function
+        async : false,
+        dataType : 'json',
+        data : dataTransaksi, 
+        success:function(response){
+                if (response == "200") {
+                    
+                  Swal.fire({
+                    type: 'success',
+                    title: 'Berhasil di simpan!',
+                    text: 'Tunggu sejenak',
+                    timer: 1000,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                  })
+                  .then (function() {
+                    window.location.href = "<?php echo site_url('Home')?>";
+                  });
+
+                } else {
+
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Gagal menyimpan',
+                    text: 'silahkan coba lagi!'
+                  });
+
+
+                }
+
+                console.log(response);
+
+              },
+
+              error:function(response){
+
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Opps!',
+                    text: 'server error!'
+                  });
+
+                  console.log(response);
+
+              }
+     
+      });
+
+    });
+  });
+</script>
 
 <script language="javascript" type="text/javascript">
 $(document).ready(function(){
@@ -497,62 +565,52 @@ $(document).on('keydown', 'body', function(e){
     }
 });
 
-$(document).on('click', '#Simpann', function(){
-    $('.modal-dialog').removeClass('modal-lg');
-    $('.modal-dialog').addClass('modal-sm');
-    $('#ModalHeader').html('Konfirmasi');
-    $('#ModalContent').html("Apakah anda yakin ingin menyimpan transaksi ini ?");
-    $('#ModalFooter').html("<button type='button' class='btn btn-primary' id='SimpanTransaksi'>Ya, saya yakin</button><button type='button' class='btn btn-default' data-dismiss='modal'>Batal</button>");
-    $('#ModalGue').modal('show');
 
-    setTimeout(function(){ 
-        $('button#SimpanTransaksi').focus();
-    }, 500);
-});
+// $(document).on('click', 'button#SimpanTransaksi', function(){
+//     SimpanTransaksi();
+// });
 
-$(document).on('click', 'button#SimpanTransaksi', function(){
-    SimpanTransaksi();
-});
+
 
 $(document).on('click', 'button#CetakStruk', function(){
     CetakStruk();
 });
 
-function SimpanTransaksi()
-{
-    var FormData = "nomor_nota="+encodeURI($('#nomor_nota').val());
-    FormData += "&tanggal="+encodeURI($('#tanggal').val());
-    FormData += "&id_kasir="+$('#id_kasir').val();
-    FormData += "&id_pelanggan="+$('#id_pelanggan').val();
-    FormData += "&" + $('#TabelTransaksi tbody input').serialize();
-    FormData += "&cash="+$('#UangCash').val();
-    FormData += "&catatan="+encodeURI($('#catatan').val());
-    FormData += "&grand_total="+$('#TotalBayarHidden').val();
+// function SimpanTransaksi()
+// {
+//     var FormData = "nomor_nota="+encodeURI($('#nomor_nota').val());
+//     FormData += "&tanggal="+encodeURI($('#tanggal').val());
+//     FormData += "&id_kasir="+$('#id_kasir').val();
+//     FormData += "&id_pelanggan="+$('#id_pelanggan').val();
+//     FormData += "&" + $('#TabelTransaksi tbody input').serialize();
+//     FormData += "&cash="+$('#UangCash').val();
+//     FormData += "&catatan="+encodeURI($('#catatan').val());
+//     FormData += "&grand_total="+$('#TotalBayarHidden').val();
 
-    $.ajax({
-        url: "<?php echo site_url('penjualan/transaksi'); ?>",
-        type: "POST",
-        cache: false,
-        data: FormData,
-        dataType:'json',
-        success: function(data){
-            if(data.status == 1)
-            {
-                alert(data.pesan);
-                window.location.href="<?php echo site_url('penjualan/transaksi'); ?>";
-            }
-            else 
-            {
-                $('.modal-dialog').removeClass('modal-lg');
-                $('.modal-dialog').addClass('modal-sm');
-                $('#ModalHeader').html('Oops !');
-                $('#ModalContent').html(data.pesan);
-                $('#ModalFooter').html("<button type='button' class='btn btn-primary' data-dismiss='modal' autofocus>Ok</button>");
-                $('#ModalGue').modal('show');
-            }   
-        }
-    });
-}
+//     $.ajax({
+//         url: "<?php echo site_url('penjualan/transaksi'); ?>",
+//         type: "POST",
+//         cache: false,
+//         data: FormData,
+//         dataType:'json',
+//         success: function(data){
+//             if(data.status == 1)
+//             {
+//                 alert(data.pesan);
+//                 window.location.href="<?php echo site_url('penjualan/transaksi'); ?>";
+//             }
+//             else 
+//             {
+//                 $('.modal-dialog').removeClass('modal-lg');
+//                 $('.modal-dialog').addClass('modal-sm');
+//                 $('#ModalHeader').html('Oops !');
+//                 $('#ModalContent').html(data.pesan);
+//                 $('#ModalFooter').html("<button type='button' class='btn btn-primary' data-dismiss='modal' autofocus>Ok</button>");
+//                 $('#ModalGue').modal('show');
+//             }   
+//         }
+//     });
+// }
 
 $(document).on('click', '#TambahPelanggan', function(e){
     e.preventDefault();
