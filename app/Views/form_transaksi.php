@@ -190,10 +190,10 @@
   $(document).ready(function(){
 
     $('#btnSimpan').click(function(){
-        $('#formTransaksi').find(':input:disabled').removeAttr('disabled');
+        $('#formTransaksi').find(':input:disabled').removeAttr('disabled'); // menghilangkan attribut disable
         $('#TabelTransaksi').find(':input:disabled').removeAttr('disabled');
-        var dataForm = $('#formTransaksi').serialize();
-        var dataTabel = $('#TabelTransaksi tbody input').serialize();
+        var dataForm = $('#formTransaksi').serialize(); // get data form
+        var dataTabel = $('#TabelTransaksi tbody input').serialize(); // get data tabel
         var dataTransaksi = dataForm + '&' + dataTabel;
         $.ajax({
         type  : 'POST',
