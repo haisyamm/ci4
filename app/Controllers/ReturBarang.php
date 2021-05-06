@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Retur_model;
+use App\Models\Product_model;
 
 class ReturBarang extends BaseController
 {
@@ -29,41 +30,48 @@ class ReturBarang extends BaseController
         
 
 		$model = new Retur_model();
-		//$pmodel = new Product_model();
+		$pmodel = new Product_model();
 
 		$baris = $this->request->getPost('baris');
-		$no = '23';
+		$no = '20';
 		$dataHeader = array(
 			'id_retur'        => $no,
 			'tgl_retur'       => $this->request->getPost('tglretur'),
 			'jenis_retur'        => $this->request->getPost('namacustomer'),
 			'alasan_retur' => $this->request->getPost('catatan'),
-			'total_retur' => $this->request->getPost('Total')
+			'total_retur' => $this->request->getPost('TotalBayarHidden')
 			
 		);
+
+
 		$data = $model->saveRetur($dataHeader);
 
-		for ($i=1; $i <= $baris ; $i++) { 
-		$dataDetail = array(
-			'retur_id'        => $no,
-			'product_id'       => $this->request->getPost('idproduct'.$i),
-			'product_name'        => $this->request->getPost('nameproduct'.$i),
-			'product_price' => $this->request->getPost('harga'.$i),
-			'product_qty' => $this->request->getPost('jumlah_beli'.$i)
-		);
-		$data = $model->saveDetailRetur($dataDetail);
+		if ($data) {
 
-		//$data = $model->kurangiStock($dataDetail);
+		for ($i=1; $i <= $baris ; $i++) { 
+			$dataDetail = array(
+				'retur_id'        => $no,
+				'product_id'       => $this->request->getPost('idproduct'.$i),
+				'product_name'        => $this->request->getPost('nameproduct'.$i),
+				'product_price' => $this->request->getPost('harga'.$i),
+				'product_qty' => $this->request->getPost('jumlah_beli'.$i)
+			);
+
+			$id = $this->request->getPost('idproduct'.$i);
+			$qty = $this->request->getPost('jumlah_beli'.$i);
+
+			$data = $model->saveDetailRetur($dataDetail);
+			$data = $pmodel->kurangiStock($id, $qty);
 		}
 		
-		if($data){
+				if($data){
+					echo '200';
+				} else {		            
+		            echo '300';
+		        }
 
-			echo '200';
-
-        } else {
-            
+        } else {  
             echo '300';
-
         }
 
     }
