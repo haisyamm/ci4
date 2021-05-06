@@ -38,6 +38,15 @@ class Product_model extends Model
         $query = $this->db->table('products')->update($data, array('id_product' => $id));
         return $query;
     }
+
+    public function kurangiStock($id, $qty)
+    {
+        $builder = $this->db->table('products');
+        $builder->set('stok_product', 'stok_product-'.$qty, false);
+        $builder->where('id_product', $id);
+       
+        return  $builder->update();
+    }
  
     public function deleteProduct($id)
     {
