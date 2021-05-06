@@ -20,6 +20,7 @@
 
     <!-- jquery 3.3.1 Dicopy dari footer untuk menjadi plug-in utama sehingga di simpan di header-->
     <script src="<?php echo base_url('assets/vendor/jquery')?>/jquery-3.3.1.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
    
     
 
