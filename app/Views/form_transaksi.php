@@ -126,9 +126,10 @@
             <tbody></tbody>
         </table>
         </div>
-         <input type="hidden" class="form-control" name="baris" id="baris" value="0" disabled>
+         <input type="hidden" class="form-control" name="baris" id="baris" value="0">
         <div class="row">
         <div class="col-sm-7">
+          <input type="hidden" id="TotalBayarHidden">
             <textarea name="catatan" id="catatan" class="form-control" rows="2
             " placeholder="Catatan Transaksi (Jika Ada)" style="resize: vertical; width:83%;"></textarea>
             
@@ -150,7 +151,7 @@
                       <div class="form-group col-md-10">
                         <label for="">Grand Total</label>
                         <input type="text" class="form-control" name="Grand Total" id="TotalBayar" disabled>
-                        <input type="hidden" id="TotalBayarHidden">
+                        
                       </div>
                       <div class="form-group  col-md-10" >
                             <label for="UangCash">Bayar</label>
@@ -190,11 +191,13 @@
   $(document).ready(function(){
 
     $('#btnSimpan').click(function(){
-        $('#formTransaksi').find(':input:disabled').removeAttr('disabled'); // menghilangkan attribut disable
+        $('#formTransaksi').find(':input:disabled').removeAttr('disabled'); // 
         $('#TabelTransaksi').find(':input:disabled').removeAttr('disabled');
-        var dataForm = $('#formTransaksi').serialize(); // get data form
-        var dataTabel = $('#TabelTransaksi tbody input').serialize(); // get data tabel
-        var dataTransaksi = dataForm + '&' + dataTabel;
+        var dataForm = $('#formTransaksi').serialize();
+        var baris = $('#baris').val();
+        var Total = $('#TotalBayarHidden').val();
+        var dataTabel = $('#TabelTransaksi tbody input').serialize();
+        var dataTransaksi = dataForm + '&' + 'Total:'+Total+ '&' + dataTabel + '&' + 'baris:'+baris;
         $.ajax({
         type  : 'POST',
         url   : '<?php echo site_url('ReturBarang/save')?>',//Memanggil Controller/Function
