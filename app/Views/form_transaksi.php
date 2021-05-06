@@ -127,9 +127,10 @@
         </table>
         </div>
          <input type="hidden" class="form-control" name="baris" id="baris" value="0">
+         <input type="hidden"  class="form-control" name="TotalBayarHidden" id="TotalBayarHidden">
         <div class="row">
         <div class="col-sm-7">
-          <input type="hidden" id="TotalBayarHidden">
+          
             <textarea name="catatan" id="catatan" class="form-control" rows="2
             " placeholder="Catatan Transaksi (Jika Ada)" style="resize: vertical; width:83%;"></textarea>
             
@@ -194,10 +195,8 @@
         $('#formTransaksi').find(':input:disabled').removeAttr('disabled'); // 
         $('#TabelTransaksi').find(':input:disabled').removeAttr('disabled');
         var dataForm = $('#formTransaksi').serialize();
-        var baris = $('#baris').val();
-        var Total = $('#TotalBayarHidden').val();
         var dataTabel = $('#TabelTransaksi tbody input').serialize();
-        var dataTransaksi = dataForm + '&' + 'Total:'+Total+ '&' + dataTabel + '&' + 'baris:'+baris;
+        var dataTransaksi = dataForm + '&' + dataTabel ;
         $.ajax({
         type  : 'POST',
         url   : '<?php echo site_url('ReturBarang/save')?>',//Memanggil Controller/Function
@@ -205,7 +204,7 @@
         dataType : 'json',
         data : dataTransaksi, 
         success:function(response){
-                if (response == "200") {
+                if (response == 200) {
                     
                   Swal.fire({
                     type: 'success',
