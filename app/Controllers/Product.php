@@ -83,6 +83,8 @@ class Product extends BaseController
         echo json_encode($data);
     }
 
+
+
     public function delete()
     {
         $model = new Product_model();
@@ -90,5 +92,7 @@ class Product extends BaseController
         $data = $model->deleteProduct($id);
         echo json_encode($data);
     }
+
+ 
  
 }
